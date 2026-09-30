@@ -5,6 +5,18 @@
 
 ---
 
+## 내려받기
+
+**Python 도 Node 도 관리자 권한도 필요 없습니다.** [최신 릴리스](../../releases/latest)에서
+`MultibandHall-windows.zip` 을 받아 아무 곳에나 풀고, `MultibandHall\MultibandHall.exe` 를
+더블클릭하십시오. 콘솔 창이 열리고 이어서 브라우저가 분석 페이지로 열립니다.
+**콘솔 창을 닫으면 프로그램이 멈춥니다.** 설치되는 것이 없고 파일이 컴퓨터 밖으로
+나가지 않습니다 — 서버는 loopback 에서만 듣습니다.
+
+소스에서 돌리거나 명령줄로 쓰는 법은 **돌리는 법** 절에 있습니다.
+
+---
+
 ## 자기수송만으로 말할 수 있는 것과 없는 것
 
 자기수송은 Fermi pocket 이 아니라 **전도 채널**을 봅니다. 이 프로그램은 거기서 나오는
@@ -85,27 +97,13 @@
 
 ## 돌리는 법
 
-### 명령줄
-
-```bash
-python -m pip install -r requirements.txt
-python -m mbfit --data tests/data/synthetic_series.csv \
-                --config configs/synthetic_workflow.json \
-                --out results --count data
-```
-
-`--count peaks` 는 개수를 스펙트럼 봉우리에 고정합니다 (명령줄에서만). `--count` 없이 돌리면 설정이
-선언한 carrier 를 그대로 fit 합니다. `results/report.html` 을 먼저 여십시오.
-
-`--symmetrize-rhoxx` 와 `--antisymmetrize-rhoxy` 는 데이터를 `B` 에 대한 짝·홀
-부분으로 바꿉니다. 주지 않으면 꺼져 있고, 패리티 위반은 바꾸기 전에 잽니다.
-
 ### 페이지와 Windows 폴더
 
-명령을 돌리지 않는 동료를 위해: `MultibandHall-windows.zip` 을 풀고
-`MultibandHall\MultibandHall.exe` 를 더블클릭합니다. zip 은 저장소에 없습니다 —
-빌드 산출물이지 커밋하는 것이 아닙니다. 이 프로젝트의 릴리스에서 받으시거나, 이 절
-끝의 `.\packaging\build.ps1` 로 직접 만드십시오. 콘솔 창이 열리고 이어서
+대부분의 사용자가 택할 길이고, 내려받기 한 번이면 됩니다. [최신 릴리스](../../releases/latest)의
+zip 을 풀고 `MultibandHall\MultibandHall.exe` 를 더블클릭하십시오.
+
+zip 은 빌드 산출물이라 저장소에 없습니다. 릴리스마다 하나씩 올라가고, `.\packaging\build.ps1`
+로 소스에서 같은 폴더를 만들 수도 있습니다 (이 절 끝 참고). 콘솔 창이 열리고 이어서
 브라우저가 열립니다. **콘솔 창을 닫으면 프로그램이 멈춥니다.** Python·Node·관리자
 권한이 필요 없고, 서버는 loopback 에서만 들으며 파일은 컴퓨터 밖으로 나가지 않습니다.
 
@@ -157,6 +155,21 @@ python -m mbfit --config config.json --data combined.csv --out reproduced --coun
 폴더 빌드는 `.\packaging\build.ps1`.
 
 ---
+
+### 명령줄
+
+```bash
+python -m pip install -r requirements.txt
+python -m mbfit --data tests/data/synthetic_series.csv \
+                --config configs/synthetic_workflow.json \
+                --out results --count data
+```
+
+`--count peaks` 는 개수를 스펙트럼 봉우리에 고정합니다 (명령줄에서만). `--count` 없이 돌리면 설정이
+선언한 carrier 를 그대로 fit 합니다. `results/report.html` 을 먼저 여십시오.
+
+`--symmetrize-rhoxx` 와 `--antisymmetrize-rhoxy` 는 데이터를 `B` 에 대한 짝·홀
+부분으로 바꿉니다. 주지 않으면 꺼져 있고, 패리티 위반은 바꾸기 전에 잽니다.
 
 ## 참고문헌
 

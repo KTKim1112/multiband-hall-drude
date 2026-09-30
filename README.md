@@ -5,6 +5,20 @@ returns how many conduction channels of each sign the data requires, the
 effective density and mobility of each, and — before any of those numbers —
 how well the curves are followed and whether the numbers are determined.
 
+## Download
+
+**No Python, no Node, no administrator rights.** Take
+`MultibandHall-windows.zip` from [the latest release](../../releases/latest),
+unzip it anywhere, and double-click `MultibandHall\MultibandHall.exe`. A console
+window opens and then your browser, on the analysis page. Closing the console
+stops the program. Nothing is installed and nothing leaves the machine: the
+server listens on the loopback interface only.
+
+Running from source, or from the command line, is described under
+[Running it](#running-it).
+
+---
+
 The Korean guide is [`docs/README.ko.md`](docs/README.ko.md). The documents
 under `specs/` are normative; those under `docs/` are their translations.
 
@@ -110,33 +124,18 @@ Every temperature comes with, in this order:
 
 ## Running it
 
-### Command line
-
-```bash
-python -m pip install -r requirements.txt
-python -m mbfit --data tests/data/synthetic_series.csv \
-                --config configs/synthetic_workflow.json \
-                --out results --count data
-```
-
-`--count peaks` holds the count to the spectrum's peaks (command line only). Without `--count` the
-program fits exactly the carriers the configuration declares. Open
-`results/report.html` first.
-
-`--symmetrize-rhoxx` and `--antisymmetrize-rhoxy` replace the data with its
-even and odd parts in `B`; both are off unless given, and the parity violation
-is measured before either replacement.
-
 ### The page, and the Windows folder
 
-For colleagues who do not run commands: unzip `MultibandHall-windows.zip` and
-double-click `MultibandHall\MultibandHall.exe`. The zip is not in the
-repository -- it is built, not committed. Take it from this project's releases,
-or build it yourself with `.\packaging\build.ps1` (see the end of this
-section). A console window opens and then
-the browser; closing the console stops the program. No Python, no Node, no
+This is the route most readers want, and it is one download: the zip from
+[the latest release](../../releases/latest), unzipped, and
+`MultibandHall\MultibandHall.exe` double-clicked. A console window opens and
+then the browser; closing the console stops the program. No Python, no Node, no
 administrator rights. The server listens on the loopback interface only, and
 the files stay on the machine.
+
+The zip is a build product and is not in the repository. Every release carries
+one, and `.\packaging\build.ps1` makes the same folder from source (see the end
+of this section).
 
 Drop the files anywhere on the page — one temperature per file or several,
 `rho_xx` and `rho_xy` together or in separate files — check the proposed
@@ -191,6 +190,23 @@ From source: `pip install -r requirements.txt -r requirements-app.txt`,
 Build the folder with `.\packaging\build.ps1`.
 
 ---
+
+### Command line
+
+```bash
+python -m pip install -r requirements.txt
+python -m mbfit --data tests/data/synthetic_series.csv \
+                --config configs/synthetic_workflow.json \
+                --out results --count data
+```
+
+`--count peaks` holds the count to the spectrum's peaks (command line only). Without `--count` the
+program fits exactly the carriers the configuration declares. Open
+`results/report.html` first.
+
+`--symmetrize-rhoxx` and `--antisymmetrize-rhoxy` replace the data with its
+even and odd parts in `B`; both are off unless given, and the parity violation
+is measured before either replacement.
 
 ## What a run writes
 
