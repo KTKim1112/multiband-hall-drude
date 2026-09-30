@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "columns": {
+    "T": "T(K)",
+    "B": "B(T)",
+    "rhoxx": "rhoxx(microohm cm)",
+    "rhoxy": "rhoxy(microohm cm)"
+  },
+  "carriers": [
+    {
+      "name": "h_fast",
+      "kind": "hole",
+      "density": { "init": 4.0e+20, "min": 1e+17, "max": 1e+23 },
+      "mobility": { "init": 12000.0, "min": 1.0, "max": 1000000.0 }
+    },
+    {
+      "name": "h_slow",
+      "kind": "hole",
+      "density": { "init": 2.5e+21, "min": 1e+17, "max": 1e+23 },
+      "mobility": { "init": 1900.0, "min": 1.0, "max": 1000000.0 }
+    },
+    {
+      "name": "e_fast",
+      "kind": "electron",
+      "density": { "init": 3.2e+20, "min": 1e+17, "max": 1e+23 },
+      "mobility": { "init": 22000.0, "min": 1.0, "max": 1000000.0 }
+    },
+    {
+      "name": "e_slow",
+      "kind": "electron",
+      "density": { "init": 1.4e+21, "min": 1e+17, "max": 1e+23 },
+      "mobility": { "init": 800.0, "min": 1.0, "max": 1000000.0 }
+    }
+  ],
+  "optimization": {
+    "multi_start": 8
+  },
+  "spectrum": {
+    "enabled": true,
+    "lorentzian_terms": 6,
+    "lorentzian_multi_start": 12,
+    "mu_min_cm2Vs": 100.0,
+    "mu_max_cm2Vs": 300000.0
+  },
+  "workflow": {
+    "count": "data"
+  }
+}

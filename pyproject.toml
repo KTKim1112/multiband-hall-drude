@@ -1,0 +1,9 @@
+# Minimal on purpose (Article IX). The package is run from the repository;
+# there is no packaging or installation step, per plan.md section 6.
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+markers = [
+    "slow: a gate that needs thousands of fits to answer; kept because the answer is the gate",
+]

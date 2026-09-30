@@ -1,0 +1,55 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# --- 테스트 / 캐시 ---
+.pytest_cache/
+.ruff_cache/
+
+# --- 실행 결과물 (재생성 가능하므로 버전관리 제외) ---
+results/
+results_check/
+out/
+*.png
+
+# --- OS / 에디터 ---
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
+
+# --- 작업용 worktree / 세션 상태 (저장소 내용이 아님) ---
+.claude/
+# --- 참고 논문 PDF (타인의 저작물이므로 저장소에 넣지 않는다) ---
+*.pdf
+
+# --- 웹 화면 빌드 결과물과 패키징 산출물 (재생성 가능) ---
+frontend/node_modules/
+app/static/
+packaging/build/
+packaging/dist/
+*.tsbuildinfo
+
+# --- 사람이 열어 보는 보고서 모음 (결과물 복사본) ---
+reports/
+
+# --- 측정 데이터와 그 값이 든 기록은 이 배포 저장소에 들어가지 않는다 ---
+# 원본 저장소에는 시료의 sweep, 그것으로 맞춘 설정, 그리고 측정값을 적어 둔
+# 연구 기록이 있다. 옮겨 오는 과정에서 두 번 빠뜨린 적이 있어, 실수해도
+# 커밋되지 않도록 여기서 막는다.
+data_example/
+example_input.csv
+example_and fitting results*.csv
+tests/data/csv3sb5*
+configs/csv3sb5_*
+specs/*/research.md
+docs/research.ko.md
+docs/[0-9][0-9][0-9]-research.ko.md
+
+# --- 이 저장소의 문서가 아니다 ---
+# manual.en.md 는 다른 프로젝트(nodeless-sc-gap)의 제작 수기이고, 메일 주소와
+# 개인 폴더 경로가 들어 있다. 원본 저장소에는 남기고 여기로는 옮기지 않는다.
+manual.en.md

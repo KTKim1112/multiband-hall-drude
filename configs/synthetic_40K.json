@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "columns": {
+    "T": "T(K)",
+    "B": "B(T)",
+    "rhoxx": "rhoxx(microohm cm)",
+    "rhoxy": "rhoxy(microohm cm)"
+  },
+  "carriers": [
+    {
+      "name": "h_fast",
+      "kind": "hole",
+      "density": {
+        "init": 6E+20,
+        "min": 1E+17,
+        "max": 1E+23
+      },
+      "mobility": {
+        "init": 3200.0,
+        "min": 1.0,
+        "max": 1000000.0
+      }
+    },
+    {
+      "name": "h_slow",
+      "kind": "hole",
+      "density": {
+        "init": 3E+21,
+        "min": 1E+17,
+        "max": 1E+23
+      },
+      "mobility": {
+        "init": 137.5,
+        "min": 1.0,
+        "max": 1000000.0
+      }
+    },
+    {
+      "name": "e_fast",
+      "kind": "electron",
+      "density": {
+        "init": 5E+20,
+        "min": 1E+17,
+        "max": 1E+23
+      },
+      "mobility": {
+        "init": 4160.0,
+        "min": 1.0,
+        "max": 1000000.0
+      }
+    },
+    {
+      "name": "e_slow",
+      "kind": "electron",
+      "density": {
+        "init": 2.8E+21,
+        "min": 1E+17,
+        "max": 1E+23
+      },
+      "mobility": {
+        "init": 181.25,
+        "min": 1.0,
+        "max": 1000000.0
+      }
+    }
+  ],
+  "optimization": {
+    "multi_start": 8
+  }
+}

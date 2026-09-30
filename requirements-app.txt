@@ -1,0 +1,7 @@
+# The page, its server, and the packaged build. Feature 005.
+# Not needed for the command line; justified in plan 001 section 6.1.
+fastapi>=0.115
+uvicorn>=0.30
+python-multipart>=0.0.9
+httpx>=0.27
+pyinstaller>=6.0
