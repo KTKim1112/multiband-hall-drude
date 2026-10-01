@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+title: "mbfit: multiband magnetotransport analysis"
+message: "If you use this program in work you publish, please cite it."
+type: software
+authors:
+  - family-names: Kim
+    given-names: Kwang-Tak
+    alias: ktkim
+    # Add your ORCID here if you have one -- it is what makes a citation
+    # resolve to you rather than to a name many people share:
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+repository-code: "https://github.com/KTKim1112/multiband-hall-drude"
+license: MIT
+version: 0.1.0
+date-released: "2026-09-30"
+abstract: >-
+  Fits the longitudinal and Hall resistivity of a multicarrier conductor
+  together with a classical multiband Drude model, and reports how far the
+  measurement determines the answer before reporting the answer. The number of
+  conduction channels is bounded above by a mobility spectrum and below by what
+  the sweep requires; each candidate is judged by four gates and graded by the
+  conditioning of the fit, because a curve can be followed closely while the
+  densities and mobilities behind it are not determined at all.
+keywords:
+  - magnetotransport
+  - Hall effect
+  - carrier mobility
+  - carrier concentration
+  - multicarrier analysis
+  - mobility spectrum
+  - semiconductor characterisation
+  - Drude model

@@ -34,7 +34,7 @@ export const L: Labels = {
   adjust_source: 'From',
   adjust_undo: 'Undo',
   confirm_heading: 'Confirm',
-  confirm_intro: 'Confirming does not gather the numbers on this screen. It **runs the procedure again** under the settings your adjustments amount to, so it takes minutes. What that buys is that the tables you download describe one run throughout, and that the configuration document included with them gives the same answer on the command line.',
+  confirm_intro: 'Confirming does not gather the numbers on this screen. It runs the procedure again, under the settings your adjustments amount to, so it takes minutes. What that buys is that the tables you download describe one run throughout, and that the configuration document included with them gives the same answer on the command line.',
   confirm_settings: (counts: number, bands: number) =>
     `Pins the count at ${counts} temperatures and couples ${bands} band(s).`,
   confirm_run: 'Confirm and run again',

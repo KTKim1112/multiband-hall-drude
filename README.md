@@ -5,6 +5,36 @@ returns how many conduction channels of each sign the data requires, the
 effective density and mobility of each, and — before any of those numbers —
 how well the curves are followed and whether the numbers are determined.
 
+**Where this matters.** A single-field Hall measurement gives one carrier
+density and one mobility, and those are the right numbers only when one carrier
+carries the current. Where two or more do — a doped layer beside its substrate,
+a two-dimensional gas beside a parallel path, a compensated or narrow-gap
+semiconductor, a film whose surface conducts — the single-field numbers are a
+weighted average of channels that may not even share a sign, and they move with
+field without anything about the sample having changed. Separating them is what
+multicarrier analysis of the field sweep is for, and it is why the method's own
+literature, cited at the end, is largely semiconductor characterisation.
+
+The hard part is not the fitting. A four-carrier model will follow almost any
+smooth pair of curves, so a good fit is not evidence that the densities and
+mobilities behind it mean anything. On a synthetic sweep built from known
+carriers — the only kind where the error can be known at all — this program's
+own calibration found an `R^2` of `0.99959` alongside a low-mobility density
+wrong by `35 %`. Nothing in the fit quality says so.
+
+That is what the program is built around. It reports what the measurement
+determines before it reports what it fitted, grades the conditioning, and
+refuses rather than guesses.
+
+![The verdict table: three temperatures whose fits all reach an R-squared of
+1.0000, graded A, C and B](docs/images/verdicts.png)
+
+Three sweeps of the test fixture, analysed. Every one is followed to an `R^2`
+of `1.0000` — and the grades are `A`, `C` and `B`, because the conditioning
+behind those identical curves differs by sixty times. The 20 K row is the one
+worth looking at: a perfect-looking fit whose carrier numbers are shape only. A
+tool that reported the parameters and stopped would have said nothing was wrong.
+
 ## Download
 
 **No Python, no Node, no administrator rights.** From
@@ -158,12 +188,18 @@ The zip is a build product and is not in the repository. Every release carries
 one, and `.\packaging\build.ps1` makes the same folder from source (see the end
 of this section).
 
+![Uploading sweeps: each file listed with its row count and the temperature
+read from its name](docs/images/upload.png)
+
 Drop the files anywhere on the page — one temperature per file or several,
 `rho_xx` and `rho_xy` together or in separate files — check the proposed
 column mapping and units, and start. Excel files need saving as CSV first. Progress can be stopped, keeping the
 temperatures that finished. A precise check — resampling for intervals — can be
 run per temperature. The page is in Korean or English, chosen in the header and
 remembered.
+
+![The adjustment step: refit a chosen temperature at a carrier count you pick,
+with the procedure's own verdict kept beside it](docs/images/adjust.png)
 
 A finished analysis opens a sixth step, **Adjust and confirm**, for when the
 procedure landed somewhere unphysical at one temperature or the series cannot

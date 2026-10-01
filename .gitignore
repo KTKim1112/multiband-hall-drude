@@ -14,6 +14,9 @@ results/
 results_check/
 out/
 *.png
+# ...except the screenshots the README shows. They are the only picture
+# anyone gets of the program before downloading it.
+!docs/images/*.png
 
 # --- OS / 에디터 ---
 Thumbs.db
@@ -38,8 +41,9 @@ reports/
 
 # --- 측정 데이터와 그 값이 든 기록은 이 배포 저장소에 들어가지 않는다 ---
 # 원본 저장소에는 시료의 sweep, 그것으로 맞춘 설정, 그리고 측정값을 적어 둔
-# 연구 기록이 있다. 옮겨 오는 과정에서 두 번 빠뜨린 적이 있어, 실수해도
-# 커밋되지 않도록 여기서 막는다.
+# 연구 기록이 있다. 옮겨 오는 과정에서 세 번 빠뜨린 적이 있어 — 세 번째는 이
+# .gitignore 자체를 원본에서 덮어써서 이 규칙들을 지운 것이었다 — 실수해도
+# 커밋되지 않도록 여기서 막는다. 이 파일을 원본에서 그대로 복사하지 말 것.
 data_example/
 example_input.csv
 example_and fitting results*.csv
