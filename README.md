@@ -7,12 +7,32 @@ how well the curves are followed and whether the numbers are determined.
 
 ## Download
 
-**No Python, no Node, no administrator rights.** Take
-`MultibandHall-windows.zip` from [the latest release](../../releases/latest),
-unzip it anywhere, and double-click `MultibandHall\MultibandHall.exe`. A console
-window opens and then your browser, on the analysis page. Closing the console
-stops the program. Nothing is installed and nothing leaves the machine: the
-server listens on the loopback interface only.
+**No Python, no Node, no administrator rights.** From
+[the latest release](../../releases/latest), take the file named
+
+> **`MultibandHall-windows.zip`** — about **64 MB**
+
+and not either of the two below it. GitHub adds `multiband-hall-drude-<tag>.zip`
+and `.tar.gz` to every release by itself; those are the source code, about
+0.6 MB, and hold no program at all. The size tells them apart at a glance.
+
+Unzip it anywhere, open the `MultibandHall` folder inside, and double-click
+`MultibandHall.exe` — it is one level down, beside a folder called `_internal`:
+
+```text
+MultibandHall-windows.zip
+└── MultibandHall\
+    ├── MultibandHall.exe      <- double-click this
+    └── _internal\             <- the Python runtime; leave it alone
+```
+
+A console window opens and then your browser, on the analysis page. Closing the
+console stops the program. Nothing is installed and nothing leaves the machine:
+the server listens on the loopback interface only.
+
+Windows may warn that the program is unsigned, because it is. Some antivirus
+software quarantines unsigned executables of this kind; if the exe is missing
+after unzipping, look in the quarantine before concluding the download failed.
 
 Running from source, or from the command line, is described under
 [Running it](#running-it).
@@ -126,8 +146,9 @@ Every temperature comes with, in this order:
 
 ### The page, and the Windows folder
 
-This is the route most readers want, and it is one download: the zip from
-[the latest release](../../releases/latest), unzipped, and
+This is the route most readers want, and it is one download: the 64 MB
+`MultibandHall-windows.zip` from [the latest release](../../releases/latest) --
+not the source archives GitHub adds beside it -- unzipped, and
 `MultibandHall\MultibandHall.exe` double-clicked. A console window opens and
 then the browser; closing the console stops the program. No Python, no Node, no
 administrator rights. The server listens on the loopback interface only, and

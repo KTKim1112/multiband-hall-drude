@@ -8,10 +8,32 @@
 ## 내려받기
 
 **Python 도 Node 도 관리자 권한도 필요 없습니다.** [최신 릴리스](../../releases/latest)에서
-`MultibandHall-windows.zip` 을 받아 아무 곳에나 풀고, `MultibandHall\MultibandHall.exe` 를
-더블클릭하십시오. 콘솔 창이 열리고 이어서 브라우저가 분석 페이지로 열립니다.
+이 파일을 받으십시오.
+
+> **`MultibandHall-windows.zip`** — 약 **64 MB**
+
+그 아래 두 개가 아닙니다. GitHub 이 릴리스마다 `multiband-hall-drude-<태그>.zip` 과
+`.tar.gz` 를 **자동으로** 붙이는데, 그것은 소스 코드이고 약 0.6 MB 이며 프로그램이
+들어 있지 않습니다. 크기만 봐도 구분됩니다 — 64 MB 대 0.6 MB.
+
+아무 곳에나 풀고, 안에 있는 `MultibandHall` 폴더로 들어가 `MultibandHall.exe` 를
+더블클릭하십시오. **한 겹 안에** `_internal` 폴더와 나란히 있습니다.
+
+```text
+MultibandHall-windows.zip
+└── MultibandHall\
+    ├── MultibandHall.exe      <- 이것을 더블클릭
+    └── _internal\             <- Python 런타임. 건드리지 마십시오
+```
+
+확장자를 숨기는 설정이면 `MultibandHall.exe` 가 아니라 **`MultibandHall`** 로만
+보입니다. 콘솔 창이 열리고 이어서 브라우저가 분석 페이지로 열립니다.
 **콘솔 창을 닫으면 프로그램이 멈춥니다.** 설치되는 것이 없고 파일이 컴퓨터 밖으로
 나가지 않습니다 — 서버는 loopback 에서만 듣습니다.
+
+서명되지 않은 실행파일이라 Windows 경고가 뜰 수 있습니다. 백신이 이런 실행파일을
+격리하는 경우가 있으니, 압축을 푼 뒤 exe 가 없으면 **내려받기가 실패한 것으로
+단정하기 전에 격리 목록을 확인**해 보십시오.
 
 소스에서 돌리거나 명령줄로 쓰는 법은 **돌리는 법** 절에 있습니다.
 
@@ -100,7 +122,8 @@
 ### 페이지와 Windows 폴더
 
 대부분의 사용자가 택할 길이고, 내려받기 한 번이면 됩니다. [최신 릴리스](../../releases/latest)의
-zip 을 풀고 `MultibandHall\MultibandHall.exe` 를 더블클릭하십시오.
+**64 MB `MultibandHall-windows.zip`** — GitHub 이 옆에 붙여 두는 소스 압축본이 아닙니다 —
+을 풀고 `MultibandHall\MultibandHall.exe` 를 더블클릭하십시오.
 
 zip 은 빌드 산출물이라 저장소에 없습니다. 릴리스마다 하나씩 올라가고, `.\packaging\build.ps1`
 로 소스에서 같은 폴더를 만들 수도 있습니다 (이 절 끝 참고). 콘솔 창이 열리고 이어서
